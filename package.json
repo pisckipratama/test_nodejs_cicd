@@ -1,0 +1,29 @@
+{
+  "name": "tes_cicd",
+  "version": "1.0.0",
+  "description": "testing ci cd",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "NODE_ENV=production node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "ci/cd",
+    "nodejs",
+    "restapi"
+  ],
+  "author": "Piscki F. Pratama",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.1.1",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  }
+}
