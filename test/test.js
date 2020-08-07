@@ -12,7 +12,7 @@ describe('employees api', function () {
   it('seharusnya bisa menampilkan data employees', function (done) {
     chai
       .request(server)
-      .get('/api/v1/data')
+      .get('/api/v1/employees')
       .end(function (err, res) {
         if (err) {
           console.error(err);

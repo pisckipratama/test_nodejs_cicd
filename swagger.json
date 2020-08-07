@@ -1,0 +1,39 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Employees API",
+    "description": "Employees API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:9000",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Employees",
+      "description": "API for employees in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/employees": {
+      "get": {
+        "tags": ["Employees"],
+        "summary": "Get all Employees in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Employees"
+            }
+          }
+        }
+      }
+    }
+  }
+}
