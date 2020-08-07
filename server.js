@@ -1,32 +1,20 @@
 const express = require('express');
+const cors = require('cors');
 const dotenv = require('dotenv');
-const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
 dotenv.config({ path: '.env' });
 const app = express();
 
-// extended https://swagger.io/specification/#infoObject
-
-// const swaggerOption = {
-//   swaggerDefinition: {
-//     info: {
-//       version: '1.0.0',
-//       title: 'Employees API',
-//       description: 'Employees API Information',
-//       contact: {
-//         name: 'Programmer Minimalist',
-//       },
-//       servers: ['http://localhost:9000/api/v1'],
-//     },
-//   },
-//   apis: ['server.js'],
-// };
+// middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
 
 const indexRoutes = require('./app/routes/index_router');
 app.use('/api/v1/employees', indexRoutes);
 
-// const swaggerDocs = swaggerJsDoc(swaggerOption);
+// swagger option
 const swaggerDocs = require('./swagger.json');
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
