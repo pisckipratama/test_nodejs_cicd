@@ -1,1 +1,1 @@
-echo "<h1>This is for testing version $BUILD_NUMBER" > index.html
+echo "<h1>This testing version $BUILD_NUMBER" > index.html
